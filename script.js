@@ -3,6 +3,16 @@ let musica = document.querySelector('audio');
 document.querySelector('.botao-play').addEventListener('click', tocarMusica);
 document.querySelector('.botao-pause').addEventListener('click', pausarMusica);
 
+let duracaoMusica = document.querySelector('.fim');
+
+let imagem = document.querySelector('img');
+
+let nomeMusica = document.querySelector('.decricao h2');
+
+let nomeArtista = document.querySelector('.descricaoi'); 
+
+
+duracaoMusica.textContent = segundosParaMinutos(Math.floor(musica.duration));
 musica.addEventListener('timeupdate', atualizarBarra);
 
 // FUNÇÕES 
