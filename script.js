@@ -22,3 +22,11 @@ function atualizarBarra(){
     let tempoDecorrido = document.querySelector('.inicio');
     tempoDecorrido.textContent = segundosParaMinutos(Math.floor(musica.currentTime));
 }
+function segundosParaMinutos(segundos){
+    let campoMinutos = Math.floor(segundos / 60);
+    let campoSegundos = segundos % 60;
+    if (campoSegundos < 10){
+        campoSegundos = '0' + campoSegundos;
+    }
+    return campoMinutos+':'+campoSegundos;
+}
