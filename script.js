@@ -7,6 +7,8 @@ let musica = [
 
 
 let musica = document.querySelector('audio');
+let indexMusica = 0;
+
 // EVENTOS
 document.querySelector('.botao-play').addEventListener('click', tocarMusica);
 document.querySelector('.botao-pause').addEventListener('click', pausarMusica);
@@ -23,7 +25,30 @@ let nomeArtista = document.querySelector('.descricao i');
 duracaoMusica.textContent = segundosParaMinutos(Math.floor(musica.duration));
 musica.addEventListener('timeupdate', atualizarBarra);
 
+document.querySelector('.anterior').addEventListener('click', () => {
+    indexMusica--;
+    redenrizarMusica();
+
+});
+document.querySelector('.proximo').addEventListener('click', () => {
+    indexMusica++;    
+    redenrizarMusica();
+
+});
+
+
 // FUNÇÕES 
+
+function redenrizarMusica(index){
+    musica.setAttribute('src',musica[index].src );
+    musica.addEventListener('loadeddata', () => {
+        nomeMusica.textContent = musica[index].titulo;
+        nomeArtista.textContent = musica[index].artista;
+        imagem.src = musica[index].img;
+        duracaoMusica.textContent = segundosParaMinutos(Math.floor(musica.duration));
+    });
+}
+
 function tocarMusica(){
     musica.play();
     document.querySelector('.botao-pause').style.display ='block';
@@ -48,3 +73,4 @@ function segundosParaMinutos(segundos){
     }
     return campoMinutos+':'+campoSegundos;
 }
+
