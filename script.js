@@ -1,3 +1,11 @@
+let musica = [
+    {titulo:'Born a Rockstar - NEFFEX', artista:'Gean Carlos', src:'music/Born a Rockstar - NEFFEX.mp3', img:'img/rock.jpg'},
+    {titulo:'Smokey s Lounge - TrackTribe', artista:'Arnold Cruz', src:'music/Smokeys Lounge - TrackTribe.mp3', img:'img/jazz.jpg'},
+    {titulo:'Like That - Anno Domini Beats', artista:'Lil Zyvk', src:'music/Like That - Anno Domini Beats.mp3', img:'img/trap.jpg'}
+
+];
+
+
 let musica = document.querySelector('audio');
 // EVENTOS
 document.querySelector('.botao-play').addEventListener('click', tocarMusica);
